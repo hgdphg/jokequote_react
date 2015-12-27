@@ -11,6 +11,12 @@
 
     @setState users: users
 
+  deleteUser: (user) ->
+      users = @state.users.slice()
+      index = users.indexOf user
+      users.splice index, 1
+      @replaceState users: users
+
   render: ->
     React.DOM.div
       className: 'users'
@@ -28,9 +34,10 @@
           React.DOM.tr null,
             React.DOM.th null, 'User name'
             React.DOM.th null, 'Email'
+            React.DOM.th null, 'Actions'
         React.DOM.tbody null,
           for user in @state.users
-            React.createElement User, key: user.id, user: user
+            React.createElement User, key: user.id, user: user, handleDeleteUser: @deleteUser
 
 
 
