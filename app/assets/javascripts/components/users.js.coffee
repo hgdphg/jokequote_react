@@ -1,14 +1,27 @@
 @Users = React.createClass
   getInitialState: ->
     users: @props.data
+
   getDefaultProps: ->
     users: []
+
+  addUser: (user) ->
+    users = @state.users.slice()
+    users.push user
+
+    @setState users: users
+
   render: ->
     React.DOM.div
       className: 'users'
       React.DOM.h2
         className: 'username'
-        'Users'
+        'Create user'
+      React.createElement UserForm, handleNewUser: @addUser
+      React.DOM.br null
+      React.DOM.h2
+        className: 'username'
+        'Users list'
       React.DOM.table
         className: 'table table-bordered'
         React.DOM.thead null,
