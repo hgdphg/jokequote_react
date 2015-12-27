@@ -30,7 +30,7 @@
             React.DOM.th null, 'Email'
         React.DOM.tbody null,
           for user in @state.users
-            React.createElement User, key: user.id, record: user
+            React.createElement User, key: user.id, user: user
 
 
 
