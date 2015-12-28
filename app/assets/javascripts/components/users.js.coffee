@@ -6,16 +6,18 @@
     users: []
 
   addUser: (user) ->
-    users = @state.users.slice()
-    users.push user
-
+    users = React.addons.update(@state.users, { $push: [user] })
     @setState users: users
 
   deleteUser: (user) ->
-      users = @state.users.slice()
-      index = users.indexOf user
-      users.splice index, 1
-      @replaceState users: users
+    index = @state.users.indexOf user
+    users = React.addons.update(@state.users, { $splice: [[index, 1]] })
+    @replaceState users: users
+
+  updateUser: (user, data) ->
+    index = @state.users.indexOf user
+    users = React.addons.update(@state.users, { $splice: [[index, 1, data]] })
+    @replaceState users: users
 
   render: ->
     React.DOM.div
@@ -37,7 +39,7 @@
             React.DOM.th null, 'Actions'
         React.DOM.tbody null,
           for user in @state.users
-            React.createElement User, key: user.id, user: user, handleDeleteUser: @deleteUser
+            React.createElement User, key: user.id, user: user, handleDeleteUser: @deleteUser, handleEditUser: @updateUser
 
 
 

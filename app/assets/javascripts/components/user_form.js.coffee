@@ -44,7 +44,7 @@
       React.DOM.div
         className: 'form-group'
         React.DOM.input
-          type: 'text'
+          type: 'password'
           className: 'form-control'
           placeholder: 'Password'
           name: 'password'
@@ -53,7 +53,7 @@
       React.DOM.div
         className: 'form-group'
         React.DOM.input
-          type: 'text'
+          type: 'password'
           className: 'form-control'
           placeholder: 'Password confirmation'
           name: 'password_confirmation'
