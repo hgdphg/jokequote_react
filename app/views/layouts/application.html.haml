@@ -29,6 +29,15 @@
           %ul.nav.navbar-nav.navbar-right
             %li= link_to "Joke Contents", "/"
             %li= link_to "", "/path2"
+            %li
+              - id = session[:user_id]
+              - if id
+                - name = session[:username]
+                %h4 Wellcome you, #{name}
+                %h5= button_to 'Logout', logout_path, method: :delete , :class => "btn btn-xs btn-primary"
+              - else
+                %h4 Wellcome you to our site
+                %h5= button_to 'Login', login_path, method: :get, :class => "btn btn-xs btn-success"
 
     .container
       .row

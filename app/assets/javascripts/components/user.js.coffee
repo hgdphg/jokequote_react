@@ -12,7 +12,7 @@
       username: React.findDOMNode(@refs.username).value
       email: React.findDOMNode(@refs.email).value
     $.ajax
-      method: 'PUT'
+      method: 'PATCH'
       url: "/users/#{ @props.user.id }"
       dataType: 'JSON'
       data:
