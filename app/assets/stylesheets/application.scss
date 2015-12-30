@@ -8,6 +8,38 @@ footer {
   padding-right: 10%;
 }
 
+.joke_content_homepage {
+  margin-top: 30px;
+  margin-bottom: 5%;
+  vertical-align: bottom;
+  padding-left: 15%;
+  padding-right: 15%;
+  .end_content {
+    text-align: center
+  }
+}
+.titleofhomepage {
+  height: 150px;
+  margin-top: -40px;
+  margin-right: -250px;
+  margin-left: -250px;
+  background: #00af6b;
+  color: white;
+  text-align: center;
+  h3{
+    padding-top: 50px;
+  }
+}
+
+.buttonarea
+{
+  text-align: center;
+  .button_link {
+    width: 20%;
+    color: white;
+    margin-left: 5px;
+  }
+}
 
 
 

@@ -20,6 +20,9 @@ class SessionController < ApplicationController
   def destroy
     session[:user_id] = nil
     session[:username] = nil
+
+    cookies[:joke_content_has_checked] = nil
+
     redirect_to homepage_path
   end
 end

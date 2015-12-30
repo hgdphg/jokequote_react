@@ -28,7 +28,7 @@
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav.navbar-right
             %li= link_to "Joke Contents", "/contents"
-            %li= link_to "", "/path2"
+            %li= link_to "Reset cookies", logout_path, method: :delete
             %li
               - id = session[:user_id]
               - if id
@@ -47,5 +47,7 @@
         %hr/
         %p= "dadajkdaskjd asbb kbsdhbakb sbdjbhja bdshbhyas d bhjbhkjsdbabsdb jkabsdaj ksd jabsj dbajsbdakjsbdjka bsdjabdbasdjab jsdbjabdjab hjdbajsbdjassb djasbdjasd dadajkdaskjd asbb kbsdhbakb sbdjbhja bdshbhyas d bhjbhkjsdbabsdb jkabsdaj ksd jabsj dbajsbdakjsbdjka bsdjabdbasdjab jsdbjabdjab hjdbajsbdjassb djasbdjasd dadajkdaskjd asbb kbsdhbakb sbdjbhja bdshbhyas d bhjbhkjsdbabsdb jkabsdaj ksd jabsj dbajsbdakjsbdjka bsdjabdbasdjab jsdbjabdjab hjdbajsbdjassb djasbdjasd dadajkdaskjd asbb kbsdhbakb sbdjbhja "
         %p &copy; Company 2015
-
+        %p
+          - id =  cookies[:joke_content_has_checked]
+        %p=id
 
